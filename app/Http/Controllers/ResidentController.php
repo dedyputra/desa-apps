@@ -10,9 +10,9 @@ class ResidentController extends Controller
 {
     public function index()
     {
-        $resident = Resident::all();
+        $residents = Resident::all();
         return view('pages.resident.index', [
-            'residents' => $resident,
+            'residents' => $residents,
         ]);
     }
 
@@ -68,7 +68,7 @@ class ResidentController extends Controller
             'status' => ['required', Rule::in(['active', 'moved', 'deceased'])],
         ]);
 
-        Resident::findOrfaill($id)->update($request->validated());
+        Resident::findOrfail($id)->update($request->validated());
 
         return redirect('/resident')->with('success', 'Data Berhasil Diperbarui.');
     }
@@ -76,8 +76,8 @@ class ResidentController extends Controller
 
     public function destroy($id)
     {
-        $resident = Resident::findOrFail($id);
-        $resident->delete();
+        $residents = Resident::findOrFail($id);
+        $residents->delete();
         return redirect('/resident')->with('success', 'Data Berhasil Dihapus.');
     }
 }

@@ -55,7 +55,7 @@
 
             <!-- Footer -->
             @include('layouts.footer')
-            <!-- End of Footer -->  
+            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
