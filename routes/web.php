@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/', function () {
     return view('pages.dashboard');
-});
+})->name('dashboard');
 
 
 // Resident Routes
