@@ -49,10 +49,10 @@
                             <td>{{ $item->status }}</td>
                             <td>
                                 <div class="d-flex flex-column flex-sm-row gap-2">
-                                    <a href="{{ route('resident.edit', $item->id) }}" class="d-inline-block mr-2 btn btn-sm btn-warning">
+                                    <a href="/resident/{{ $item->id }}" class="d-inline-block mr-2 btn btn-sm btn-warning">
                                     <i class="fas fa-pen"></i>
                                     </a>
-                                    <form action="{{ route('resident.delete', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                    <form action="/resident/{{ $item->id }} " method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="d-inline-block mr-2 btn btn-sm btn-danger">
