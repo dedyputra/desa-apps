@@ -27,7 +27,7 @@ class ResidentController extends Controller
         $validatedData = $request->validate([
             'nik' => ['required', 'min:16', 'max:16'],
             'name' => ['required', 'max:100'],
-            'gander' => ['required', Rule::in(['male', 'female'])],
+            'gender' => ['required', Rule::in(['male', 'female'])],
             'birth_date' => ['required', 'string'],
             'birth_place' => ['required', 'max:100'],
             'address' => ['required', 'max:700'],
@@ -43,21 +43,12 @@ class ResidentController extends Controller
         return redirect('/resident')->with('success', 'Data Berhasil Ditambahkan.');
     }
 
-
-    public function edit($id)
-    {
-        $resident = Resident::findOrFail($id);
-        return view('pages.resident.edit', [
-            'resident' => $resident,
-        ]);
-    }
-
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
             'nik' => ['required', 'min:16', 'max:16'],
             'name' => ['required', 'max:100'],
-            'gander' => ['required', Rule::in(['male', 'female'])],
+            'gender' => ['required', Rule::in(['male', 'female'])],
             'birth_date' => ['required', 'string'],
             'birth_place' => ['required', 'max:100'],
             'address' => ['required', 'max:700'],
@@ -68,10 +59,11 @@ class ResidentController extends Controller
             'status' => ['required', Rule::in(['active', 'moved', 'deceased'])],
         ]);
 
-        Resident::findOrfail($id)->update($request->validated());
+        Resident::findOrFail($id)->update($validated);
 
         return redirect('/resident')->with('success', 'Data Berhasil Diperbarui.');
     }
+
 
 
     public function destroy($id)

@@ -16,17 +16,18 @@
            <input type="text" inputmode="numeric" id="nik" name="nik" class="form-control"  placeholder="Masukkan NIK" required>
         </div>
         <div class="form-group mb-3">
-           <label for="nik">Nama Lengkap</label>
+           <label for="name">Nama Lengkap</label>
            <input type="text" inputmode="numeric" id="name" name="name" class="form-control"  placeholder="Masukkan Nama Lengkap" required>
         </div>
         <div class="form-group mb-3">
-           <label for="nik">Jenis Kelamin</label>
-           <select class="form-control" id="gander" name="gander" required>
-                    <option value="">-- Pilih Jenis Kelamin --</option>
-                    <option value="male">Laki-laki</option>
-                    <option value="female">Perempuan</option>
+             <label for="gender">Jenis Kelamin</label>
+            <select class="form-control" id="gender" name="gender" required>
+                <option value="">-- Pilih Jenis Kelamin --</option>
+                <option value="male">Laki-laki</option>
+                <option value="female">Perempuan</option>
             </select>
         </div>
+
         <div class="form-group mb-3">
          <label for="birth_place">Tempat Lahir</label>
          <input type="text" class="form-control" id="birth_place" name="birth_place" required placeholder="Masukkan Tempat Lahir" required>
