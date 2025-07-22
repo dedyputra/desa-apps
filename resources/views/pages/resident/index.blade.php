@@ -39,11 +39,23 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $item->nik }}</td>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->gander }}</td>
+                            <td>{{ $item->gender == 'male' ? 'Laki-laki' : 'Perempuan' }}</td>
                             <td>{{ $item->birth_place }}, {{ $item->birth_date }}</td>
                             <td>{{ $item->address }}</td>
                             <td>{{ $item->religion }}</td>
-                            <td>{{ $item->marital_status }}</td>
+                           <td>
+                             @switch($item->marital_status)
+                            @case('single') Belum Kawin
+                            @break
+                            @case('married')Sudah Menikah
+                            @break
+                            @case('divorced') Cerai
+                            @break
+                            @case('widowed') Janda/Duda
+                            @break
+                            @default Tidak Diketahui
+                            @endswitch
+                        </td>
                             <td>{{ $item->occupation }}</td>
                             <td>{{ $item->phone }}</td>
                             <td>{{ $item->status }}</td>
