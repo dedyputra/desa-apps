@@ -29,7 +29,7 @@
 
 ## Teknologi yang Digunakan
 
-- **Laravel Framework**
+- **Laravel Framework 12.0**
 - **Blade Template Engine**
 - **Bootstrap 4/5**
 - **MySQL Database**
@@ -41,7 +41,7 @@
 
 1. Clone repositori:
    ```bash
-   git clone https://github.com/username/desaku-app.git
+   git clone https://github.com/dedyputra/desa-apps.git
 
 2. Masuk ke direktori project:
    ```bash
