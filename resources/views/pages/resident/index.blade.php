@@ -43,38 +43,26 @@
                             <td>{{ $item->birth_place }}, {{ $item->birth_date }}</td>
                             <td>{{ $item->address }}</td>
                             <td>{{ $item->religion }}</td>
-                           <td>
-                             @switch($item->marital_status)
-                            @case('single') Belum Kawin
-                            @break
-                            @case('married')Sudah Menikah
-                            @break
-                            @case('divorced') Cerai
-                            @break
-                            @case('widowed') Janda/Duda
-                            @break
-                            @default Tidak Diketahui
-                            @endswitch
-                        </td>
-                            <td>{{ $item->occupation }}</td>
+                             <td>{{ $item->marital_status }} </td>
+                           <td>{{ $item->occupation }}</td>
                             <td>{{ $item->phone }}</td>
                             <td>{{ $item->status }}</td>
                             <td>
-                                <div class="d-flex flex-column flex-sm-row gap-2">
-                                    <a href="/resident/{{ $item->id }}" class="d-inline-block mr-2 btn btn-sm btn-warning">
+                             <div class="d-flex flex-column flex-sm-row gap-2">
+                                <!-- Tombol Edit -->
+                                <a href="/resident/{{ $item->id }}" class="d-inline-block mr-2 btn btn-sm btn-warning">
                                     <i class="fas fa-pen"></i>
-                                    </a>
-                                    <form action="/resident/{{ $item->id }} " method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="d-inline-block mr-2 btn btn-sm btn-danger">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    </form>
-                                </div>
-                                </td>
+                                </a>
+
+                                <!-- Tombol Hapus (trigger modal) -->
+                                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#confirmationDelete-{{ $item->id }}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            </td>
 
                             </tr>
+                            @include("pages.resident.confirmation-delete")
                         @endforeach
                         </tbody>
 

@@ -43,6 +43,15 @@ class ResidentController extends Controller
         return redirect('/resident')->with('success', 'Data Berhasil Ditambahkan.');
     }
 
+
+    public function edit($id)
+    {
+        $resident = Resident::findOrFail($id);
+        return view('pages.resident.edit', [
+            'resident' => $resident,
+        ]);
+    }
+
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
