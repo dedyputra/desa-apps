@@ -1,4 +1,3 @@
-<!-- Modal Delete -->
 <div class="modal fade" id="confirmationDelete-{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmationDeleteLabel-{{ $item->id }}" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <form action="{{ route('resident.destroy', $item->id) }}" method="POST">
