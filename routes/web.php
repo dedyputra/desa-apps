@@ -1,18 +1,16 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResidentController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('authenticate');
 
 Route::get('/', function () {
     return view('pages.dashboard');
 })->name('dashboard');
 
-
-// Resident Routes
 // Resident Routes
 Route::get('/resident', [ResidentController::class, 'index'])->name('resident.index');
 Route::get('/resident/create', [ResidentController::class, 'create'])->name('resident.create');
