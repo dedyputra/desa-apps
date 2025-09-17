@@ -26,7 +26,6 @@
         <div class="form-group mb-3">
           <label for="gender">Jenis Kelamin</label>
           <select id="gender" name="gender" required class="form-control @error('gender') is-invalid @enderror">
-
             <option value="">-- Pilih Jenis Kelamin --</option>
             <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Laki-laki</option>
             <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Perempuan</option>
@@ -72,7 +71,6 @@
         <div class="form-group mb-3">
           <label for="status">Status Penduduk</label>
           <select id="status" name="status" required class="form-control @error('status') is-invalid @enderror">
-
             <option value="">-- Pilih Status Penduduk --</option>
             <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>Aktif</option>
             <option value="moved" {{ old('status') == 'moved' ? 'selected' : '' }}>Pindah</option>
