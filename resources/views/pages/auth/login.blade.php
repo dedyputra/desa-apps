@@ -41,8 +41,8 @@
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember
-                          Me</label>
+                        {{-- <label class="custom-control-label" for="customCheck">Remember
+                          Me</label> --}}
                       </div>
                     </div>
                     <a href="index.html" class="btn btn-primary btn-user btn-block">
@@ -51,10 +51,10 @@
                     <hr>
                   </form>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                    <a class="small" href="forgot-password.html">Lupa Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
+                    <a class="small" href="register.html">Buat Akun Baru!</a>
                   </div>
                 </div>
               </div>
