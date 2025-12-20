@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResidentController;
 
 Route::get('/', function () {
-    return view('pages.auth.login');
+    return view('pages.login');
 })->name('login');
 Route::get('/', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('authenticate');
