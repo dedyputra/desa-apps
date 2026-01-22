@@ -20,6 +20,11 @@
 </head>
 
 <body class="bg-login-custom">
+  @if ($errors->any())
+  @dd($errors->all())
+
+  @endif
+
   <div class="container">
     <div class="row justify-content-center align-items-center" style="min-height:100vh;">
       <div class="col-xl-9 col-lg-10 col-md-9">
@@ -38,14 +43,12 @@
               </div>
               <div class="col-lg-6">
                 <div class="p-5">
-
                   <div class="text-center mb-4">
                     <h1 class="h4 text-gray-900 font-weight-bold">Login</h1>
                     <p class="small text-muted">Silakan masuk untuk melanjutkan</p>
                   </div>
-                  <form method="POST" action="{{ route('login') }}" class="user">
+                  <form method="POST" action="/login" class="user">
                     @csrf
-                    <!-- Email -->
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -53,10 +56,9 @@
                             <i class="fas fa-envelope text-primary"></i>
                           </span>
                         </div>
-                        <input type="email" name="email" class="form-control form-control-user" placeholder="Email" required>
+                        <input type="email" name="email" class="form-control form-control-user" id="inputEmail" placeholder="Email" required>
                       </div>
                     </div>
-                    <!-- Password -->
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -64,15 +66,18 @@
                             <i class="fas fa-lock text-primary"></i>
                           </span>
                         </div>
-                        <input type="password" name="password" class="form-control form-control-user" placeholder="Password" required>
+                        <input type="password" name="password" class="form-control form-control-user" id="inputPassword" placeholder="Password" required>
                       </div>
                     </div>
-                    <!-- Button -->
                     <button type="submit" class="btn btn-primary btn-user btn-block font-weight-bold">
                       <i class="fas fa-sign-in-alt mr-2"></i> Masuk
                     </button>
                   </form>
                   <hr>
+                  <div class="text-center">
+                    <a class="small" href="/">Create An Account</a> | <a class="small" href="/">Forgot Password?</a>
+
+                  </div>
                   <div class="text-center">
                     <small class="text-muted">
                       © {{ date('Y') }} Aplikasi Desaku
