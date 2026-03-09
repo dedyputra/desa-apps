@@ -17,7 +17,7 @@
   Menyediakan riwayat Laporan PDF.
 
 - **Manajemen Admin**  
-  Role admin/operator untuk memproses data sesuai kewenangan.
+  Role admin/user untuk memproses data sesuai kewenangan.
 
 - **Pencarian & Filter**  
   Mempermudah pencarian data berdasarkan nama, NIK, atau status.
