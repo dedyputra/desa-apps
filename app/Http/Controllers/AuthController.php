@@ -18,7 +18,7 @@ class AuthController extends Controller
     {
         $credentials = $request->validate([
 
-            
+
             'email' => ['required', 'email'],
 
             'password' => ['required'],
@@ -30,7 +30,19 @@ class AuthController extends Controller
 
             $request->session()->regenerate();
 
-            dd(Auth::user());
+            $userStatus = Auth::user()->status;
+
+            if ($userStatus  == 'submitted') {
+                Auth::logout();
+                return back()->withErrors([
+                    'email' => 'Akun Anda belum disetujui oleh admin.',
+                ])->onlyInput('email');
+            } else if ($userStatus == 'rejected') {
+                Auth::logout();
+                return back()->withErrors([
+                    'email' => 'Akun Anda telah ditolak oleh admin.',
+                ])->onlyInput('email');
+            }
 
             return redirect()->intended('dashboard');
         }

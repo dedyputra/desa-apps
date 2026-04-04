@@ -20,10 +20,9 @@
 </head>
 
 <body class="bg-login-custom">
-  @if ($errors->any())
+  {{-- @if ($errors->any())
   @dd($errors->all())
-
-  @endif
+  @endif --}}
 
   <div class="container">
     <div class="row justify-content-center align-items-center" style="min-height:100vh;">
