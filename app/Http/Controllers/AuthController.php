@@ -37,6 +37,7 @@ class AuthController extends Controller
                 return back()->withErrors([
                     'email' => 'Akun Anda belum disetujui oleh admin.',
                 ])->onlyInput('email');
+
             } else if ($userStatus == 'rejected') {
                 Auth::logout();
                 return back()->withErrors([
