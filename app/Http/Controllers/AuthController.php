@@ -33,16 +33,13 @@ class AuthController extends Controller
             $userStatus = Auth::user()->status;
 
             if ($userStatus  == 'submitted') {
-                Auth::logout();
                 return back()->withErrors([
                     'email' => 'Akun Anda belum disetujui oleh admin.',
                 ])->onlyInput('email');
-
             } else if ($userStatus == 'rejected') {
-                Auth::logout();
                 return back()->withErrors([
                     'email' => 'Akun Anda telah ditolak oleh admin.',
-                ])->onlyInput('email');
+                ]);
             }
 
             return redirect()->intended('dashboard');
@@ -54,5 +51,17 @@ class AuthController extends Controller
             'email' => 'Ada Kesalahan pada email atau password yang dimasukkan!',
 
         ])->onlyInput('email');
+    }
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
