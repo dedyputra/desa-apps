@@ -7,6 +7,8 @@ use App\Http\Controllers\ResidentController;
 Route::middleware('guest')->group(function () {
     Route::get('/', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'authenticate'])->name('authenticate');
+    Route::get('/register', [AuthController::class, 'registerView'])->name('registerView');
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
 });
 
 // ─── Protected Routes (Harus Login) ──────────────────

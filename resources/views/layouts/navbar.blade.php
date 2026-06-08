@@ -3,6 +3,7 @@
     <i class="fa fa-bars"></i>
   </button>
   <ul class="navbar-nav ml-auto">
+    @auth
     <li class="nav-item dropdown no-arrow d-sm-none">
       <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-search fa-fw"></i>
@@ -124,7 +125,7 @@
     <div class="topbar-divider d-none d-sm-block"></div>
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
         <img class="img-profile rounded-circle" src="{{ asset('template/img/undraw_profile.svg') }}">
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -147,5 +148,6 @@
         </a>
       </div>
     </li>
+    @endauth
   </ul>
 </nav>
