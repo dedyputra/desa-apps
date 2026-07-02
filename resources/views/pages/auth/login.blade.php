@@ -74,7 +74,7 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="/">Create An Account</a> | <a class="small" href="/">Forgot Password?</a>
+                    <a class="small" href="/register">Create An Account</a> | <a class="small" href="/">Forgot Password?</a>
 
                   </div>
                   <div class="text-center">
