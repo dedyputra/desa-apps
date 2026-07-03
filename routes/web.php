@@ -11,7 +11,6 @@ Route::middleware('guest')->group(function () {
     Route::post('/register', [AuthController::class, 'register'])->name('register');
 });
 
-// ─── Protected Routes (Harus Login) ──────────────────
 Route::middleware('auth')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -20,7 +19,6 @@ Route::middleware('auth')->group(function () {
         return view('pages.dashboard');
     })->name('dashboard');
 
-    // Resident Routes
     Route::get('/resident', [ResidentController::class, 'index'])->name('resident.index');
     Route::get('/resident/create', [ResidentController::class, 'create'])->name('resident.create');
     Route::post('/resident', [ResidentController::class, 'store'])->name('resident.store');

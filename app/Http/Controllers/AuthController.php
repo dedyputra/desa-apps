@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -72,12 +73,12 @@ class AuthController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
-        $user->role_id = 2; // Set role_id to 2 for regular users
+        $user->role_id = 2;
         $user->saveOrFail();
 
 
 
-        return redirect('/login')->with('success', 'Akun berhasil dibuat. Silakan tunggu persetujuan admin untuk dapat login.');
+        return redirect('/')->with('success', 'Akun berhasil dibuat. Silakan tunggu persetujuan admin untuk dapat login.');
     }
 
 
