@@ -13,6 +13,10 @@ class AuthController extends Controller
 
     public function login()
     {
+        if (Auth::check()) {
+            return back();
+        }
+
         return view('pages.auth.login');
     }
 
