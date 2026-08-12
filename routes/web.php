@@ -12,13 +12,10 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
     Route::get('/dashboard', function () {
         return view('pages.dashboard');
     })->name('dashboard');
-
     Route::get('/resident', [ResidentController::class, 'index'])->name('resident.index');
     Route::get('/resident/create', [ResidentController::class, 'create'])->name('resident.create');
     Route::post('/resident', [ResidentController::class, 'store'])->name('resident.store');
