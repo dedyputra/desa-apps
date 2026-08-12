@@ -54,7 +54,7 @@
           <label for="marital_status">Status Perkawinan</label>
           <select id="marital_status" name="marital_status" required class="form-control @error('maritial_status') is-invalid @enderror" value="{{ old('maritial_status') }}">
             <option value="">--Pilih Status Perkawinan--</option>
-            <option value="single">Belum Kawin</option>
+            <option value="single">Belum Menikah</option>
             <option value="married">Sudah Menikah</option>
             <option value="divorced">Cerai</option>
             <option value="widowed">Janda/Duda</option>
