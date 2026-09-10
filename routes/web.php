@@ -16,6 +16,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('pages.dashboard');
     })->name('dashboard');
+
     Route::get('/resident', [ResidentController::class, 'index'])->name('resident.index');
     Route::get('/resident/create', [ResidentController::class, 'create'])->name('resident.create');
     Route::post('/resident', [ResidentController::class, 'store'])->name('resident.store');

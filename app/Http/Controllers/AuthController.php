@@ -67,7 +67,12 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $validated =  $request->validate([
+
+        if (Auth::check()) {
+            return back();
+        }
+
+        $credentials =  $request->validate([
             'name' => ['required'],
             'email' => ['required', 'email'],
             'password' => ['required'],
