@@ -21,7 +21,7 @@ class RoleMiddleware
         if (!$roleName || !in_array($roleName, $roles)) {
             abort(403); // atau return back()->with('error', 'Akses ditolak');
         }
- 
+
         return $next($request);
     }
 }
