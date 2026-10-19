@@ -6,7 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resident extends Model
 {
-    protected $table = "residents";
+    protected $table = 'residents';
+    protected $fillable = [
+        'nik',
+        'name',
+        'gender',
+        'birth_date',
+        'birth_place',
+        'address',
+        'religion',
+        'marital_status',
+        'occupation',
+        'phone',
+        'status',
+    ];
 
-    protected $guarded = [];
+    protected function casts(): array
+    {
+        return [
+            'birth_date' => 'date',
+        ];
+    }
 }
